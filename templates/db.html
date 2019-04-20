@@ -1,0 +1,408 @@
+{%extends "home.html"%}
+
+{%block content%}
+
+
+<div class="container-fluid">
+     
+      <div class="row">
+        
+          
+          <div class="col-xs-5" style="word-wrap: break-word;">   
+          <!--<div class="pre-scrollable">-->
+          <div class="panel panel-default">   <!--Añadido para formato del cuadro--> 
+          	<h3 >Markets</h3><!-- class="panel-heading" Encabezado del añadido formato cuadro--> 
+            <form action = "{{ url_for('checkbox') }}" method = post>
+
+                <div class="countries">
+                  
+                  <ul>
+                    <li><input type="checkbox" name="market" value="1"> Europa</li>
+                    <li><input type="checkbox" name="market" value="2"> USA</li>
+                    <li><input type="checkbox" name="market" value="3"> China</li>
+                    <li><input type="checkbox" name="market" value="4"> Canada</li>
+                    <li><input type="checkbox" name="market" value="5"> Australia&NZ</li>
+                    <li><input type="checkbox" name="market" value="6"> Taiwan</li>
+                    <li><input type="checkbox" name="market" value="7"> Japon</li>
+                    <li><input type="checkbox" name="market" value="8"> Hong-Kong</li>
+                    <li><input type="checkbox" name="market" value="9"> South Korea</li>
+                    <li><input type="checkbox" name="market" value="10"> Brazil</li>
+                    <br/>
+                    <li><input type="checkbox"name='showhide' onchange="checkAll(this)"><strong> Check all</strong></li>
+                  </ul> 
+                </div><!--Countries-->
+                </div><!--anel panel-default_Cuadro formato y encabezado-->
+  
+               	<div class="panel panel-default">
+                   <!--<h3 class="panel-heading">Requirements</h3>-->
+                    <div class="panel-body">  <!--div panel body--> 
+                        <ul class="treeview"><!--ul treeview-->
+                            <li><a href="#">Requirements</a><!--li tree-->
+                             <ul>
+                                <li><a href="#">Chemical</a>
+                                    <ul>
+                                        <li><a href="#">Migration</a> 
+                                            <ul>
+
+                                                <li><input type="checkbox"name='showhide' onchange="checkAll_1(this)"><strong>Check all</strong></li>
+                                                <li><input type="checkbox" value="al" name="req_chem">Al</li>
+                                                <li><input type="checkbox" value="sb" name="req_chem">Sb</li>
+                                                <li><input type="checkbox" value="as_" name="req_chem">As</li>
+                                                <li><input type="checkbox" value="ba"name="req_chem">Ba</li>
+                                                <li><input type="checkbox" value="b" name="req_chem">B</li>
+                                                <li><input type="checkbox" value="cd" name="req_chem">Cd</li>
+                                                <li><input type="checkbox" value="cr" name="req_chem">Cr</li>
+                                                <li><input type="checkbox" value="co" name="req_chem">Co</li>
+                                                <li><input type="checkbox" value="cu" name="req_chem">Cu</li>
+                                                <li><input type="checkbox" value="pb" name="req_chem">Pb</li>
+                                                <li><input type="checkbox" value="mn" name="req_chem">Mn</li>
+                                                <li><input type="checkbox" value="hg" name="req_chem">Hg</li>
+                                                <li><input type="checkbox" value="ni" name="req_chem">Ni</li>
+                                                <li><input type="checkbox" value="se" name="req_chem">Se</li>
+                                                <li><input type="checkbox" value="sr" name="req_chem">Sr</li>
+                                                <li><input type="checkbox" value="sn" name="req_chem">Sn</li>
+                                                <li><input type="checkbox" value="o_sn" name="req_chem">O.Sn</li>
+                                                <li><input type="checkbox" value="zn" name="req_chem">Zn</li>
+
+
+                                            </ul>
+                                        </li>    
+
+                                        <li><input type="checkbox" value="req02" name="req"> Phthalates</a></li>
+                                        <li><input type="checkbox" value="req03" name="req"> Formaldehyde</a></li>
+                                    </ul>
+
+                                </li>
+                                     <li><a href="#">Flammability</a><!--li Branch-->
+                                         <ul>
+                                         <li><a href="#">Stick</a></li>
+                                         <li><a href="#">Stick</a></li>
+                                         <li><a href="#">Stick_1</a><!--li Stick_1-->
+                                             <ul>
+                                                 <li><a href="#">Twig</a></li>
+                                                 <li><a href="#">Twig</a></li>
+                                                 <li><a href="#">Twig</a></li>
+                                                    <li><a href="#">Twig</a>
+                                                       <ul>
+                                                       <li><a href="#">Leaf</a></li>
+                                                       <li><a href="#">Leaf</a></li>
+                                                       <li><a href="#">Leaf</a></li>
+                                                       <li><a href="#">Leaf</a></li>
+                                                       <li><a href="#">Leaf</a></li>
+                                                       <li><a href="#">Leaf</a></li>
+                                                       <li><a href="#">Leaf</a></li>
+                                                       <li><a href="#">Leaf</a></li>
+                                                       <li><a href="#">Leaf</a></li>
+                                                        </ul>
+                                                    </li>
+                                                  <li><a href="#">Twig</a></li>
+                                                  <li><a href="#">Twig</a></li>
+                                              </ul>
+                                          </li><!--li Stick_1-->
+                                          <li><a href="#">Stick</a></li>
+                                          </ul>
+                                          </li><!--li Branch-->
+                                <li><a href="#">Physical</a>
+                                    <ul>
+                                        <li><input type="checkbox" name="req" value="holes">Holes</li>
+                                        <li><input type="checkbox" name="req" value="incomplete_deployment">Incomplete deployment</li>
+                                        <li><input type="checkbox" name="req" value="unintentional_folding">Unintentional Folding</li>
+                                        <li><input type="checkbox" name="req" value="lock_mech">Locking Mech</li>
+                                        <li><input type="checkbox" name="req" value="lock_dur">Locking Mech.Dur</li>
+                                        <li><input type="checkbox" name="req" value="lock_mech_strg">Locking Mech.Strength</li>
+                                        <li><input type="checkbox" name="req" value=""></li>
+                                        <li><input type="checkbox" name="req" value=""></li>
+                                        <li><input type="checkbox" name="req" value=""></li>
+                                        <li><input type="checkbox" name="req" value=""></li>
+                                        <li><input type="checkbox" name="req" value=""></li>
+                                        <li><input type="checkbox" name="req" value=""></li>
+                                        <li><input type="checkbox" name="req" value=""></li>
+                                        <li><input type="checkbox" name="req" value=""></li>
+                                        <li><input type="checkbox" name="req" value=""></li>
+                                        <li><input type="checkbox" name="req" value=""></li>
+                                        <li><input type="checkbox" name="req" value=""></li>
+                                        <li><input type="checkbox" name="req" value=""></li>
+                                        <li><input type="checkbox" name="req" value=""></li>
+
+                                    </ul>
+                               </li> 
+                                <li><a href="#">Otro requisito</a>
+                                    <ul>
+                                      <li><input type="checkbox" name="">hola</li>
+                                    </ul>
+                                </li>
+                          </ul>
+                         </li><!--li tree-->
+                        </ul><!--ul treeview-->
+                        </div><!--panel default-->
+
+                  <!--Busqueda avanzada-->
+                  <div class="boton_busq_avnz">
+                 <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseEx" aria-expanded="false" aria-controls="collapseEx">
+                  Advanced search
+                </button>
+                </div><!-- boton_busq_avnz -->
+                <div class="collapse" id="collapseEx">
+                  <div class="well">
+
+                      <div class="div_line">
+                   
+                        <div class="input-group">
+                          <span class="input-group-addon">
+                            <input id="checkbox_01" type="checkbox" aria-label="..." >
+                          </span>
+                          <input id="prependedcheckbox" type="text" class="form-control" aria-label="..." placeholder="CAS" pattern="[\-\d]{7,11}" ">
+                      </div><!-- /input-group -->
+                    
+                 
+                    </div> <!--div_line -->
+
+                    <div class="div_line">
+                      <h4>Material</h4>
+                           <ul>
+                              <li><input type="checkbox" name=""> Textil</li>
+                              <li><input type="checkbox" name=""> Metallic</li>
+                              <li><input type="checkbox" name=""> Wooden</li>
+                              <li><input type="checkbox" name=""> Plastic</li>
+                              <li><input type="checkbox" name=""> Others</li>
+                            </ul>
+                    </div> <!--div_line  -->
+
+                  </div> <!--well  -->
+                  
+                </div> <!--collapse  -->
+
+
+                </div><!--div panel body-->
+                 
+
+
+
+                 <div class="submit_button ">
+                    <input type="submit" value="Send" >
+                 </div>
+                  </form>
+                                             
+                 </div><!--col-xs-5-->
+
+
+                 
+
+    <div class="col-xs-7" style="word-wrap: break-word;">
+
+     <!--TABLA QUIMICOS-->
+
+     {% if boxMsg_chem !=[] %}
+     
+
+      <table   class=" table table-condensed sortable ">
+          
+            {%if check_market|length==1%}
+            <thead>
+            <tr>
+                <th data-defaultsort="disabled">Market</th>
+                <th data-defaultsort="">Requirement</th>
+                <th data-defaultsort="">Standard</th>
+                <th >Info</th>
+            </thead>
+
+            </tr>
+                {% for i in boxMsg_chem %}
+            <tr>
+                {%if loop.first%}
+                <td rowspan="{{check_req_chem|length}}">{{i[0][1]}}</td>
+                {% endif %}
+                  {% for j in i %}
+                  
+                    <td>{{j[2]}}</td>
+                  
+                    <td>{{j[4]}}</td>
+                    <td>{{j[3]}}</td>
+                          
+            </tr>
+                {% endfor %}
+                 
+                {% endfor %}
+                {% endif %}
+              
+
+               
+            
+
+            {% if check_market|length!=1 %}
+            <table  class=" table table-condensed sortable ">
+            
+
+            {% if check_req_chem|length==1 %}
+            {% set sortable = '' %}
+            {% else %}
+            {% set sortable = 'disabled' %}
+            {% endif %}
+
+            {% for i in boxMsg_chem %}
+
+            <thead>
+            <tr>
+
+                <th data-defaultsort="{{sortable}}">Item</th>
+                <th data-defaultsort="{{sortable}}">Market</th>
+                <th data-defaultsort="{{sortable}}">Data</th>
+                <th data-defaultsort="{{sortable}}">CAS</th>
+                <th data-defaultsort="{{sortable}}">Material</th>
+                <th data-defaultsort="{{sortable}}">Test Method</th>
+                <th data-defaultsort="{{sortable}}">Std/Reg.</th>
+            </tr>
+            </thead>
+                {% for j in i %}
+
+                  
+              <tr>
+                  {%if loop.first%}
+                  <td rowspan="{{i|length}}">{{j[2]}}</td>
+                  {%endif%}
+                  <td>{{j[1]}}</td>
+                  <td>{{j[4]}}</td>
+                  <td>{{j[6]}}</td>
+                  <td>{{j[8]}}</td>
+                  <td>{{j[7]}}</td>
+
+                  <td>{{j[3]}}</td>
+              
+              </tr>
+
+                 
+                
+                 {% endfor %}
+                 
+                 {% endfor %}
+                {%endif%}
+                {%endif%}
+               
+              </table>
+
+              <!--TABLA FÍSICOS-->
+        
+          {% if boxMsg_fisic!=[] %}
+            <table   class=" table table-condensed sortable ">
+          
+            {%if check_market|length==1%}
+            <thead>
+            <tr>
+                <th data-defaultsort="disabled">Market</th>
+                <th data-defaultsort="">Requirement</th>
+                <th data-defaultsort="">Data</th>
+                <th data-defaultsort="">Test Method</th>
+                <th >Info</th>
+                <th data-defaultsort="">Relevancy</th>
+                <th>Imagen</th>
+            </thead>
+
+            </tr>
+                {% for i in boxMsg_fisic %}
+            <tr>
+                {%if loop.first%}
+                <td rowspan="{{check_req|length}}">{{i[0][1]}}</td>
+                {%endif%}
+                  {% for j in i %}
+                  
+                    <td>{{j[2]}}</td>
+
+                    <td>{{j[4]}}</td>
+                    
+                    <td>{{j[7]}}</td>
+                    <td>{{j[3]}}</td>
+                    <td>{{j[5]}}</td>
+                    <td><img src="{{j[6]}}"> </td>
+                          
+            </tr>
+                {% endfor %}
+                 
+                {% endfor %}
+                {%endif%}
+               
+            
+
+            {%if check_market|length!=1%}
+            <table  class=" table table-condensed sortable ">
+            
+
+            {% if check_req|length==1 %}
+            {%set sortable = ''%}
+            {%else%}
+            {%set sortable = 'disabled'%}
+            {%endif%}
+
+            {% for i in boxMsg_fisic %}
+
+            <thead>
+            <tr>
+
+                <th data-defaultsort="{{sortable}}">Item</th>
+                <th data-defaultsort="{{sortable}}">Market</th>
+                <th data-defaultsort="{{sortable}}">Data</th>
+                <th data-defaultsort="{{sortable}}">Test Method</th>
+                <th data-defaultsort="{{sortable}}">Std/Reg.</th>
+                <th data-defaultsort="{{sortable}}">Relevancy</th>
+                <th >Imagen</th>
+                
+            </tr>
+            </thead>
+                {% for j in i %}
+
+                  
+              <tr>
+                  {%if loop.first%}
+                  <td rowspan="{{i|length}}">{{j[2]}}</td>
+                  {%endif%}
+                  <td>{{j[1]}}</td>
+                  <td>{{j[4]}}</td>
+                  <td>{{j[7]}}</td>
+                  <td>{{j[3]}}</td>
+                  <td>{{j[5]}}</td>
+                  <td><img src="{{j[6]}}"> </td>
+                  
+              
+              </tr>
+
+                 
+                
+                 {% endfor %}
+                 
+                 {% endfor %}
+                {%endif%}
+                {%endif%}
+               
+              </table>
+
+
+
+
+                    <!--mensajes de error flash-->
+                   
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                {% for message in messages %}
+                {{ message }}
+                {% endfor %}
+                {% endif %}
+                {% endwith %}
+                {{sortable}}
+                {{check_market|length}}
+                {{check_req}}
+                {{check_market}}
+                {{boxMsg_chem}}
+                {{boxMsg_fisic}}
+                {{check_req_chem}}
+
+
+
+        
+    </div>
+      
+  </div><!--row-->
+  </div><!--panel panel-default--> 
+ 
+</div> <!--lcontainer-fluid-->
+
+
+{%endblock%}

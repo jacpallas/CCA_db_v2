@@ -1,0 +1,222 @@
+ 
+div.panel:first-child {
+    margin-top:20px;
+}
+/*.panel.panel-default{
+    width: 250px;
+}
+ */
+div.treeview {
+    min-width: 100px;
+    min-height: 100px;
+
+    
+    max-height: 256px;
+    overflow:auto;
+ 
+ padding: 4px;
+ 
+ margin-bottom: 20px;
+ 
+ color: #369;
+ 
+ /*border: solid 1px;*/
+ /*border-radius: 4px;*/
+}
+div.treeview ul:first-child:before {
+    display: none;
+}
+.treeview, .treeview ul {
+    margin:0;
+    padding:0;
+    list-style:none;
+    
+     color: #5C5BA5; /*color de arbol*/
+}
+.treeview ul {
+    margin-left:1em;
+    position:relative
+}
+.treeview ul ul {
+    margin-left:.2em
+}
+.treeview ul:before {
+    content:"";
+    display:block;
+    width:0;
+    position:absolute;
+    top:0;
+    left:0;
+    border-left:1px solid;
+    
+    /* creates a more theme-ready standard for the bootstrap themes */
+    bottom:15px;
+}
+.treeview li {
+    margin:0;
+    padding:0 1em;
+    line-height:2em;
+    font-weight:700;
+    position:relative
+}
+.treeview ul li:before {
+    content:"";
+    display:block;
+    width:10px;
+    height:0;
+    border-top:1px solid;
+    margin-top:-1px;
+    position:absolute;
+    top:1em;
+    left:0
+}
+.tree-indicator {
+    margin-right:5px;
+    
+    cursor:pointer;
+}
+.treeview li a {
+    text-decoration: none;
+    color:inherit;
+    
+    cursor:pointer;
+}
+.treeview li button, .treeview li button:active, .treeview li button:focus {
+    text-decoration: none;
+    color:inherit;
+    border:none;
+    background:transparent;
+    margin:0px 0px 0px 0px;
+    padding:0px 0px 0px 0px;
+    outline: 0;
+}
+
+.countries{
+
+    color:#5C5BA5;
+    font-weight: bold;
+}
+
+
+.countries li, .div_line li{
+    list-style:none;
+    
+}
+
+div.submit_button input  {
+    border: none;
+    background: #5C5BA5;
+    color: #f2f2f2;
+    width: 100%;
+    border-radius: 2px;
+    position: relative;
+    box-sizing: border-box;
+    transition: all 10ms ease; 
+    overflow:hidden;
+    opacity:0.9;
+
+}
+
+
+/*Estilo de liniea divisora*/
+.div_line{
+    border-top: 1px solid #8c8b8b;
+    
+    padding-top: 10px;
+    margin-top: 10px;
+}
+
+
+/*Botones de búsqueda*/
+
+
+.boton_busq_avnz .btn-primary{
+    background-color: white;
+    color:#5C5BA5;
+    font-weight: bold;
+    width: 100%;
+    margin:0 auto;
+    display:block;
+}
+
+div.submit_button input:active,.btn-primary:active {
+
+    background: white;
+    color: #5C5BA5;
+    box-shadow: inset 0 0 0 3px #5C5BA5;
+}
+
+div.submit_button input:hover{
+
+   opacity:1;
+
+   
+}
+
+.boton_busq_avnz .btn-primary:hover {
+      opacity:1;
+       background-color:  #5C5BA5;
+       color:white;
+}
+
+.boton_busq_avnz .btn-primary:focus {
+    background-color: #8064A2;
+    border-color: #8064A2;
+    color: white;
+}
+
+.boton_busq_avnz .btn-primary:active:hover{
+    background:#8064A2;
+}
+
+/*Formato pequeño*/
+@media only screen and (min-width : 100px) {
+div .col-xs-5{    
+    width: 100%;
+    padding: 0px;
+    margin-top: 0px;
+}
+
+div.col-xs-7 {
+
+ width: 95%;
+}
+}
+
+/* Bootstrap 3 Media Query Breakpoints_ Formato a para dispositivos de más de X pixeles */
+@media only screen and (min-width : 600px) {
+
+   
+div .col-xs-5{    
+    width: 270px;
+    padding: 0px;
+    background-color: #F5F5F5;
+    position: fixed;
+    top: 45px;
+    bottom:63px;
+    left:10px;
+    padding-right: 5px;
+    overflow-y: scroll; /*scrollbar vertical*/
+    border-right: solid;
+    border-width: 1px;
+    border-color: #E6E6E6;
+}
+
+
+div .col-xs-5::-webkit-scrollbar { /*ocultamos scrollbar sin elim inar funcionalidad*/
+    display: none; 
+}
+
+div.col-xs-7 {  /*Columna de resultados-Tabla*/
+    position: relative;
+    margin-left: 300px;
+    width: 55%;
+
+}
+
+}/* Bootstrap 3 Media Query Breakpoints_ Formato a para dispositivos de más de X pixeles */
+
+.well{ /*recuadro búsqueda avanzada*/
+    background-color: white;
+}
+

@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		HOME
+	</title>
+
+	<script type="text/javascript" src="../static/js/checkAll.js"></script>
+
+</head>
+<body>
+
+	<div >HOME </div>
+
+		<div class="header">
+		
+		
+			<ul class="header_list">
+				<li><a href="{{ url_for('home')}}">HOME </a></li>
+				<li><a href="{{ url_for('tree')}}">BASE de DATOS</a></li>
+				<li><a href="{{ url_for('about')}}">ABOUT</a></li>
+				<li class="log_button"><a href="{{ url_for('login_page')}}">LOGIN</a></li>
+				<li><a href="{{ url_for('logout')}}">LOGOUT</a></li>
+			</ul>
+		</div>
+	
+
+
+
+	<div class="container">
+
+		{%block content%}
+
+
+		{{data}}
+		{{resultado}}
+
+			{% with messages = get_flashed_messages() %}
+			   {% if messages %}
+			      {% for message in messages %}
+			         {{ message }}
+			      {% endfor %}
+			   {% endif %}
+			{% endwith %}
+
+		{%endblock%}
+	</div>
+
+</body>
+
+
+
+
+</html>

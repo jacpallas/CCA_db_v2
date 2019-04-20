@@ -1,0 +1,33 @@
+{%extends "home.html"%}
+
+{%block content%}
+
+<div class="login">
+
+	<form action="/login" method="post">
+			USER<br>
+			<input type="text" name="user">
+			<br>
+			PASSWORD <br>
+			<input type="password" name="key">
+			<br>
+			<input type="submit" name="submit" value="LOGIN">
+
+
+	</form>
+	<br>
+	{{data}}
+	{{resultado}}
+
+		{% with messages = get_flashed_messages() %}
+		   {% if messages %}
+		      {% for message in messages %}
+		         {{ message }}
+		      {% endfor %}
+		   {% endif %}
+		{% endwith %}
+
+	{%endblock%}
+
+
+</div>

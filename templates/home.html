@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../static/img/icon.ico">
+  
+
+    <title>Signin Template for Bootstrap</title>
+
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" integrity="sha384-PmY9l28YgO4JwMKbTvgaS7XNZJ30MK9FAZjjzXtlqyZCqBY6X6bXIkM++IkyinN+" crossorigin="anonymous">
+
+
+    <!-- Custom styles for this template -->
+    <link href="../static/css/navbar-fixed-top.css" rel="stylesheet">
+
+    <!-- Custom styles para el footer pegado al borde inferior -->
+    <link href="../static/css/sticky-footer-navbar.css" rel="stylesheet">
+
+    <!-- Estilos del arbol de elementos -->
+    <link rel="stylesheet" type="text/css" href="../static/css/tree_style.css">
+
+    <!-- Estilos de table sortable -->
+    <link rel="stylesheet" type="text/css" href="../static/css/bootstrap-sortable.css">
+     <!-- Estilos personalizados -->
+    <link rel="stylesheet" type="text/css" href="../static/css/estilospersonalizados.css">
+   
+
+
+
+
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="{{url_for('home')}}">Data Bases</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="{{url_for('home')}}">Home</a></li>
+            <li><a href="{{url_for('glossary')}}">Glossary</a></li>
+            <li><a href="{{url_for('contact1')}}">Contact</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">DataBases <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li role="separator" class="divider"></li>
+                <li class="dropdown-header">Childcare</li>
+                <li><a href="{{url_for('db',section='Cots')}}">Cots</a></li>
+                <li><a href="{{url_for('db',section='Minicots')}}">Minicots</a></li>
+                <li><a href="{{url_for('db',section='Carrycots')}}">Carrycots</a></li>
+                <li><a href="{{url_for('db',section='HighChairs')}}">High Chairs</a></li>
+                <li><a href="{{url_for('db',section='ChangingProducts')}}">Changing products</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown-header">Furniture</li>
+                <li><a href="{{url_for('tree')}}">Article 1</a></li>
+                <li><a href="#">Article 2</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown-header">Other DBs</li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <!--<li><a href="../navbar/">Default</a></li>
+            <li><a href="../navbar-static-top/">Static top</a></li>-->
+            <li> <a href="">Hi {{session.username}}!</a> </li>
+            <li ><button type="button" class="btn btn-default navbar-btn" onclick="window.location.href='{{ url_for('logout')}}';">Log out</button></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+
+
+    {%block content%}
+
+
+
+    <div class="container">
+
+          <!-- Main component for a primary marketing message or call to action -->
+          <div class="jumbotron">
+            <h1>Data Bases</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum lacinia dui ac enim cursus dapibus. Vivamus tempor, justo at auctor euismod, elit est ornare erat, vitae cursus ipsum neque non nibh. Maecenas euismod sapien non odio ultricies, vel ullamcorper nisl interdum. Nam ut enim mollis urna tincidunt volutpat viverra quis lectus. Mauris consequat molestie vulputate. Proin vehicula sapien id aliquet porta. Vivamus hendrerit tristique dui id pellentesque. Nunc dapibus metus vitae mi bibendum, quis interdum nunc laoreet. </p>
+            <p>Quisque pretium consequat dui eget pharetra. Vestibulum a odio sit amet nunc gravida hendrerit sit amet eu turpis. Fusce suscipit egestas quam, et euismod ipsum fringilla vitae.. Hola</p>
+            <p>
+              <a class="btn btn-lg btn-primary" href="../bootstrap-3.4.0/components/#navbar" role="button">View navbar docs &raquo;</a>
+            </p>
+          </div>
+
+    
+
+
+  
+    <div class="row">
+      <div class="col-xs-6 col-md-3">
+        <a href="#" class="thumbnail">
+          <img src="../static/img/cot.jpg" alt="COT">
+        </a>
+      </div>
+      <div class="col-xs-6 col-md-3">
+        <a href="#" class="thumbnail">
+          <img src="../static/img/minicot.jpg" alt="...">
+        </a>
+      </div>
+        <div class="col-xs-6 col-md-3">
+        <a href="#" class="thumbnail">
+          <img src="../static/img/carrycot.jpg" alt="...">
+        </a>
+        </div>
+        <div class="col-xs-6 col-md-3">
+         <a href="#" class="thumbnail">
+          <img src="../static/img/highchair.jpg" alt="...">
+        </a>
+      </div>
+      
+    </div>
+  </div> <!-- /container -->
+
+
+
+    {%endblock%}
+
+
+  <div id="footer" class="container">
+    <nav class="navbar navbar-default navbar-fixed-bottom">
+        <div class="navbar-inner navbar-content-center">
+            <p class="text-muted credit"> DB´s</p>
+        </div>
+    </nav>
+</div>
+
+
+
+   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+
+  
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js" integrity="sha384-vhJnz1OVIdLktyixHY4Uk3OHEwdQqPppqYR8+5mjsauETgLOcEynD9oPHhhz18Nw" crossorigin="anonymous"></script>
+
+    <!-- Script que activa/desactiva las casillas de la barra de navegación-->
+    <script>
+      $(document).ready(function() {
+        $('li.active').removeClass('active');
+        $('a[href="' + location.pathname + '"]').closest('li').addClass('active'); 
+        });
+    </script>
+
+    <!--script arbol de requisitos-->
+    <script type="text/javascript" src="../static/js/tree_js.js"></script>
+    <!--script check all mercados-->
+    <script type="text/javascript" src="../static/js/checkAll.js"></script>
+
+     <!--script table sortable mercados-->
+    <script type="text/javascript" src="../static/js/bootstrap-sortable.js"></script>
+    <!--script CAS_checkbox-->
+    <script type="text/javascript" src="../static/js/CAS_checkbox.js"></script>
+    
+ 
+
+
+
+
+  </body>
+</html>

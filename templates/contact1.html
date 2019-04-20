@@ -1,0 +1,83 @@
+{%extends "home.html"%}
+
+
+{% block content %}
+
+<div>
+ <div class="container">
+
+    <div class="row">
+      <div class="col-xs-2 col-md-4"></div>
+      <div class="col-xs-8 col-md-4">
+
+        {% if success %}
+        <div class="alert alert-success" role="alert"><p><h1>Thank you for your message.</h1>We'll get back to you shortly.</p></div>
+
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <a href="{{url_for('home')}}">Go back</a>
+          </div>
+        </div>
+
+        
+    
+ 
+  {% else %}
+ 
+  
+
+  
+{% for message in form.name.errors %}
+  <div class="alert alert-danger">{{ message }}</div>
+{% endfor %}
+ 
+{% for message in form.email.errors %}
+ <div class="alert alert-danger">{{ message }}</div>
+{% endfor %}
+ 
+{% for message in form.subject.errors %}
+  <div class="flash">{{ message}}</div>
+{% endfor %}
+ 
+{% for message in form.message.errors %}
+  <div class="flash">{{ message }}</div>
+{% endfor %}
+
+
+
+<h1>Contact us</h1>
+
+    <form  class="form-horizontal" action="{{ url_for('contact1') }}" method=post >
+      
+     
+    {{ form.hidden_tag() }}
+  
+ 
+    {{ form.name.label}}
+    {{ form.name(class_="form-control") }}
+  
+ 
+    {{ form.email.label }}
+    {{ form.email(class_="form-control") }}
+ 
+    {{ form.subject.label }}
+    {{ form.subject(class_="form-control") }}
+ 
+    {{ form.message.label }}
+    {{ form.message(class_="form-control") }}
+    <br>
+    <div>
+ 
+   {{ form.submit (class_="btn btn-lg btn-primary btn-block") }}</div>
+  </form>
+
+</div>
+<div class="col-xs-2 col-md-4"></div>
+
+</div>
+</div>
+
+</div>
+{% endif %}
+
+{% endblock %}

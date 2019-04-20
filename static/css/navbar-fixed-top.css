@@ -1,0 +1,39 @@
+body {
+  min-height: 2000px;
+  padding-top: 70px;
+}
+
+.contenido{
+
+	margin:15px;
+}
+
+
+.btn.btn-lg.btn-primary{
+	background-color: #5C5BA5;
+
+}
+
+
+/*.navbar.navbar-default.navbar-fixed-top{
+
+	background-color: black;
+}
+
+.nav.navbar-nav li a{
+	color:white;
+}*/
+
+.carousel .item  {
+height: 300px;
+background-color: #F7F7F7;
+
+}
+
+
+.carousel .item img{
+	height:100%;
+	margin: auto;
+
+}
+
